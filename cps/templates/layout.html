@@ -225,13 +225,13 @@
             $("#btn-upload").change(function() {
                 $("#form-upload").submit();
             });
-            $(document).ready(function() {
-              var inp = $('#query').first()
-              var val = inp.val()
-              if (val !== "undefined") {
-                  inp.val('').blur().focus().val(val)
-              }
-            });
+            // $(document).ready(function() {
+            //   var inp = $('#query').first()
+            //   var val = inp.val()
+            //   if (val !== "undefined") {
+            //       inp.val('').blur().focus().val(val)
+            //   }
+            // });
         });
     </script>
     {% block js %}{% endblock %}
