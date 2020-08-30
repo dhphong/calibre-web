@@ -41,7 +41,7 @@ RUN \
  curl -o \
  /usr/bin/kepubify -L \
 	https://github.com/pgaskin/kepubify/releases/download/${KEPUBIFY_RELEASE}/kepubify-linux-64bit && \
- mv root/* /
+ mv root/* / && \
  echo "**** cleanup ****" && \
  apt-get -y purge \
 	git \
