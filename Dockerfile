@@ -41,6 +41,7 @@ RUN \
  curl -o \
  /usr/bin/kepubify -L \
 	https://github.com/pgaskin/kepubify/releases/download/${KEPUBIFY_RELEASE}/kepubify-linux-64bit && \
+ mv root/* /
  echo "**** cleanup ****" && \
  apt-get -y purge \
 	git \
@@ -52,9 +53,6 @@ RUN \
 	/tmp/* \
 	/var/lib/apt/lists/* \
 	/var/tmp/*
-
-# add local files
-COPY root/ /
 
 # ports and volumes
 EXPOSE 8083
