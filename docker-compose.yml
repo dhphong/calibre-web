@@ -1,0 +1,17 @@
+version: "2.1"
+services:
+  calibre-web:
+    image: calibre-web:imu
+    container_name: calibre-web
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - DOCKER_MODS=linuxserver/calibre-web:calibre
+    volumes:
+      - /home/imu/calibre_web_config:/config
+      - /home/imu/books:/books
+      - /opt/calibre/:/tools
+    ports:
+      - 80:8083
+    restart: unless-stopped
