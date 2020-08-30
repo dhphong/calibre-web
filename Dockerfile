@@ -14,6 +14,7 @@ RUN \
 	git \
 	libldap2-dev \
 	libsasl2-dev \
+	rsync \
 	python3-pip && \
  echo "**** install runtime packages ****" && \
  apt-get install -y \
@@ -41,12 +42,14 @@ RUN \
  curl -o \
  /usr/bin/kepubify -L \
 	https://github.com/pgaskin/kepubify/releases/download/${KEPUBIFY_RELEASE}/kepubify-linux-64bit && \
- mv root/* / && \
+ rsync -aP --remove-source-files root/defaults / && \
+ rsync -aP --remove-source-files root/etc / && \
  echo "**** cleanup ****" && \
  apt-get -y purge \
 	git \
 	libldap2-dev \
 	libsasl2-dev \
+    rsync \
 	python3-pip && \
  apt-get -y autoremove && \
  rm -rf \
