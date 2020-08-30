@@ -27,7 +27,7 @@ RUN \
 	unrar && \
  echo "**** install calibre-web ****" && \
  mkdir -p /app/calibre-web && \
- git clone https://github.com/dhphong/calibre-web.git /app/calibre-web
+ git clone https://github.com/dhphong/calibre-web.git /app/calibre-web && \
  cd /app/calibre-web && \
  pip3 install --no-cache-dir -U -r \
 	requirements.txt && \
