@@ -13,5 +13,5 @@ services:
       - /home/imu/books:/books
       - /opt/calibre/:/tools
     ports:
-      - 80:8083
+      - 8083:8083
     restart: unless-stopped
